@@ -11,11 +11,11 @@
 
 with source_data as (
 
-    select 1, current_timestamp as id
+    select 1 as id, current_timestamp as _modified_ts
     union all
-    select null, current_timestamp as id
+    select null as id, current_timestamp as _modified_ts
     union all
-    select 0, current_timestamp as today
+    select 0 as id, current_timestamp as _modified_ts
 
 )
 
