@@ -8,7 +8,8 @@ with payments as (
         amount/100 as amount,
         created,
         _batched_at
-    from raw.stripe.payment
+    --from raw.stripe.payment
+    from {{ source('stripe', 'payment') }}
 )
 
 select * from payments
